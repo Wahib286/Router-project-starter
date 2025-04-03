@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+
 export const SignupForm = ({setIsLoggedIn}) => {
     const navigate = useNavigate();
+    const [showPassword,setShowPassword] = useState(false);
 
+    // formdata 
     const [formdata,setFormData]= useState({
         firstname:'',
         lastname:'',
@@ -12,6 +15,7 @@ export const SignupForm = ({setIsLoggedIn}) => {
         password:'',
         confirmpassword:''
     })
+    // change in input handler 
     function changeHandler(event){
         const{name,value} = event.target;
         setFormData((prev) => (
@@ -21,8 +25,6 @@ export const SignupForm = ({setIsLoggedIn}) => {
             }
         ))
     }
-
-    const [showPassword,setShowPassword] = useState(false);
 
     function submitHandler(event){
         event.preventDefault();
