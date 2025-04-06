@@ -5,14 +5,14 @@ import toast from "react-hot-toast";
 
 const Navbar=({isLoggedIn, setisLoggedIn})=>{
     return(
-        <div className="flex justify-evenly">
+        <div className='flex justify-between items-center w-11/12 max-w-[1160px] py-4 mx-auto'>
         <Link to="/">
         <img src={logo} alt="Logo" width={160} height={32} loading="lazy"/>
         </Link>
 
         {/* fixed links */}
         <nav>
-            <ul className="flex gap-3 ">
+            <ul  className='text-richblack-100 flex gap-x-6'>
                 <li>
                     <Link to="/">Home</Link>
                 </li>
@@ -28,10 +28,11 @@ const Navbar=({isLoggedIn, setisLoggedIn})=>{
         </nav>
 
         {/* changing buttons */}
-        <div className="flex mr-3 ml-5 gap-3">
+        <div className='flex items-center gap-x-4'>
             {!isLoggedIn &&
                 <Link to="/login">
-                    <button>
+                    <button className='bg-richblack-800 text-richblack-100 py-[8px] 
+                    px-[12px] rounded-[8px] border border-richblack-700'>
                         Login
                     </button>
                 </Link>
@@ -40,7 +41,8 @@ const Navbar=({isLoggedIn, setisLoggedIn})=>{
 
             {!isLoggedIn &&
                 <Link to="/signup">
-                    <button>
+                    <button className='bg-richblack-800 text-richblack-100 py-[8px] 
+                    px-[12px] rounded-[8px] border border-richblack-700'>
                         Sign Up
                     </button>
                 </Link>
@@ -52,7 +54,8 @@ const Navbar=({isLoggedIn, setisLoggedIn})=>{
                     <button onClick={()=>{
                         setisLoggedIn(false);
                         toast.success("Logged Out")
-                    }}>
+                    }} className='bg-richblack-800 text-richblack-100 py-[8px] 
+                    px-[12px] rounded-[8px] border border-richblack-700'>
                         LogOut
                     </button>
                 </Link>
@@ -61,7 +64,8 @@ const Navbar=({isLoggedIn, setisLoggedIn})=>{
 
             {isLoggedIn &&
                 <Link to="/dashboard">
-                    <button>
+                    <button className='bg-richblack-800 text-richblack-100 py-[8px] 
+                    px-[12px] rounded-[8px] border border-richblack-700'>
                         Dashboard
                     </button>
                 </Link>
